@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
         })
     }
+      //Some users dont want to use the submit and want to press the "Enter key" so we add an event listener for the "key down" on the answer box.
+    document.getElementById('answer-box').addEventListener("keydown", function(event){
+        if(event.key === "Enter") {
+            checkAnswer();
+        }
+    })
 
     runGame("addition");
 })
@@ -46,6 +52,11 @@ document.addEventListener("DOMContentLoaded", function(){
  * and after the user's answer has been processed
  */
 function runGame(gameType) {
+    document.getElementById("answer-box").value = ""; //Everytime we refresh the page,the answer box empties so we dont have to manually delete.
+
+    //Set focus on cursor in box,eachtime the run game is called or page reloas...the answer box will gain focus with a cursor in place.
+    document.getElementById("answer-box").focus();
+
     /* creates two random numbers */
   let num1 = Math.floor(Math.random () * 25) + 1;
   let num2 = Math.floor(Math.random () * 25) + 1;
