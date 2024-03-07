@@ -164,10 +164,11 @@ body {
 }
 
 .btn--gray {
-    margin-top: 25px;
+    margin: 25px auto 0px;
     background-color: #445361;
     border: 1px transparent;
     border-radius: 20px;
+    display: block;
 }
 
 .btn--gray:active,
